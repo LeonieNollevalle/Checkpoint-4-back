@@ -14,8 +14,15 @@ const findOne = (Id) => {
     [Id])
     .then((result) => result[0]);
 };
+const createOne = ({ title, date, subtitle, description, image_url, id_categorie }) => {
+  return db.query(
+    'INSERT INTO projet (title, date, subtitle, description, image_url, id_categorie) VALUES (?, ?, ?, ?, ?, ?)',
+    [title, date, subtitle, description, image_url, id_categorie])
+    .then((result) => result[0])
+}
 
 module.exports ={
   findMany,
   findOne,
+  createOne,
 };

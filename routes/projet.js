@@ -30,4 +30,14 @@ projetRouter.get('/:id', (req, res) => {
     })
 });
 
+projetRouter.post('/', (req, res) => {
+    Projet.createOne(req.body)
+      .then((result) => {
+        res.send({ succes: 'Movie successfully save', data: result });
+      })
+      .catch((err) => {
+        res.send('Error saving the movie');
+      })
+  });
+
 module.exports=projetRouter;
