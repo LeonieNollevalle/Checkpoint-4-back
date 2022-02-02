@@ -14,6 +14,14 @@ const findOne = (Id) => {
     [Id])
     .then((result) => result[0]);
 };
+
+const findOnecat = (Id) => {
+  return db.query(
+    'SELECT * FROM projet WHERE id_categorie = ?',
+    [Id])
+    .then((result) => result[0]);
+};
+
 const createOne = ({ title, date, subtitle, description, image_url, id_categorie }) => {
   return db.query(
     'INSERT INTO projet (title, date, subtitle, description, image_url, id_categorie) VALUES (?, ?, ?, ?, ?, ?)',
@@ -39,4 +47,5 @@ module.exports ={
   createOne,
   updateOne,
   deleteOne,
+  findOnecat,
 };

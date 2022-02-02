@@ -6,7 +6,7 @@ projetRouter.get('/', (req, res) => {
   Projet.findMany(req.body)
     .then((projet) => {
       if (projet) {
-        res.status(200).json(projet);
+        res.json(projet);
       } else {
         res.status(404).send('Project not found');
       }
@@ -18,6 +18,20 @@ projetRouter.get('/', (req, res) => {
 
 projetRouter.get('/:id', (req, res) => {
   Projet.findOne(req.params.id)
+    .then((Projet) => {
+      if (Projet) {
+        res.status(200).json(Projet);
+      } else {
+        res.status(404).send('Project not found');
+      }
+    })
+    .catch((err) => {
+      res.status(500).send('Error retrieving project from the database')
+    })
+});
+
+projetRouter.get('/categorie/:id', (req, res) => {
+  Projet.findOnecat(req.params.id)
     .then((Projet) => {
       if (Projet) {
         res.status(200).json(Projet);
