@@ -1,12 +1,19 @@
-CREATE TABLE users(
-  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  uuid_users VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
-  hashedpassword VARCHAR(255) NOT NULL
-);
+CREATE TABLE categorie (
+  id INT PRIMARY AUTO_INCREMENT KEY NOT NUll,
+  name VARCHAR(250) NOT NULL,
+)
 
-INSERT INTO users(uuid_users,email,hashedpassword) 
-  VALUES ('$2b$10$DpDzpIthDFMGK1E7fMuexulyL6KiVzFAirevhuyC5EIf5xVmWQJQW','toto@wildcodeschool.com','$2b$10$DpDzpIthDFMGK1E7fMuexulyL6KiVzFAirevhuyC5EIf5xVmWQJQW');
+INSERT INTO categorie (name)
+  VALUES ("editions");
 
+INSERT INTO categorie ( name)
+  VALUES ("identité");
 
-/** DO NOT PASTE IT mdp => MDPwild-22 */
+INSERT INTO categorie (name)
+  VALUES ("interface");
+
+INSERT INTO categorie (name)
+  VALUES ("typography");
+
+INSERT INTO categorie (name)
+  VALUES ("motion");
