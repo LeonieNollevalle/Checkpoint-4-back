@@ -50,4 +50,15 @@ projetRouter.post('/', (req, res) => {
         })
     });  
 
+    projetRouter.delete("/:id", (req, res) => {
+      Projet.deleteOne(req.params.id)
+        .then((result) => {
+          res.send({ success: 'Project deleted successfully', data: result })
+        })
+        .catch((err) => {
+          res.send("Error deleting the Project")
+        });
+    
+    });
+
 module.exports=projetRouter;

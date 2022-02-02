@@ -26,9 +26,17 @@ const updateOne = (Id, Data) => {
     .then((result) => result[0])
 };
 
+const deleteOne = (Id) => {
+  return db.query(
+    'DELETE FROM projet WHERE id = ?',
+    [Id])
+    .then((result) => result[0])
+}
+
 module.exports ={
   findMany,
   findOne,
   createOne,
   updateOne,
+  deleteOne,
 };
