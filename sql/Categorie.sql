@@ -1,7 +1,7 @@
 CREATE TABLE categorie (
-  id INT PRIMARY AUTO_INCREMENT KEY NOT NUll,
-  name VARCHAR(250) NOT NULL,
-)
+  id INT PRIMARY KEY AUTO_INCREMENT  NOT NUll,
+  name VARCHAR(250) NOT NULL
+);
 
 INSERT INTO categorie (name)
   VALUES ("editions");
