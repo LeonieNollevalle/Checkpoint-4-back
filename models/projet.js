@@ -8,9 +8,10 @@ const findMany = () => {
     .then((result) => result[0]);
 };
 
-const findOne = () => {
-  let sqlQuery = 'SELECT * FROM projet';
-  return db.query(sqlQuery)
+const findOne = (Id) => {
+  return db.query(
+    'SELECT * FROM projet WHERE id = ?',
+    [Id])
     .then((result) => result[0]);
 };
 
