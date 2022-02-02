@@ -33,11 +33,21 @@ projetRouter.get('/:id', (req, res) => {
 projetRouter.post('/', (req, res) => {
     Projet.createOne(req.body)
       .then((result) => {
-        res.send({ succes: 'Movie successfully save', data: result });
+        res.send({ succes: 'Project successfully save', data: result });
       })
       .catch((err) => {
-        res.send('Error saving the movie');
+        res.send('Error saving the Project');
       })
   });
+
+  projetRouter.put("/:id", (req, res) => {
+    Projet.updateOne(req.params.id, req.body)
+        .then((result) => {
+          res.status(204).send('Project updated successfully')
+        })
+        .catch((err) => {
+          res.status(401).send("Error updating the project")
+        })
+    });  
 
 module.exports=projetRouter;
