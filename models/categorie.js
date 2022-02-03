@@ -7,8 +7,14 @@ const findMany = () => {
     .then((result) => result[0]);
 };
 
-
+const findOne = (Id) => {
+  return db.query(
+    'SELECT * FROM categorie WHERE id = ?',
+    [Id])
+    .then((result) => result[0]);
+};
 
 module.exports ={
-  findMany
+  findMany,
+  findOne 
 };
